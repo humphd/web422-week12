@@ -1,0 +1,12 @@
+.message {
+  display: flex;
+  margin: 5px 0;
+}
+
+.me {
+  flex-direction: row-reverse;
+}
+
+.emojis {
+  padding: 4px;
+}

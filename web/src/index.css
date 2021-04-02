@@ -1,0 +1,7 @@
+/* Importing the Bootstrap CSS */
+@import url('bootstrap/dist/css/bootstrap.min.css');
+
+html, body, #root {
+  height: 100%;
+  overflow: hidden;
+}
