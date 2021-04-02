@@ -1,0 +1,31 @@
+<html>
+  <head>
+     <title>Socket.IO Connection Test</title>    
+  </head>
+  <body>
+    <p>Testing Socket Connection</p>
+    <button>Send</button>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+  <script>
+    const socket = io.connect('http://localhost:5000');
+    
+    socket.on('connect', function(data) {
+      console.log('connect', data);
+    });
+    
+    socket.on('message', function(data){
+      console.log('message', data);
+    });
+
+    document.querySelector('button').onclick = function() {
+      const data = {
+        message: 'hello from the browser',
+        date: Date.now(),
+      }
+      socket.emit('message', data);
+    };
+  </script>
+
+  </html>
+
